@@ -9,4 +9,4 @@ RUN conda install -c conda-forge tensorflow
 
 RUN /opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks
 
-ENTRYPOINT docker exec -it anaconda3 /bin/bash -c "/opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8080 --no-browser"
+ENTRYPOINT /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8080 --no-browser
